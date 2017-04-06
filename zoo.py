@@ -1,43 +1,3 @@
-class Habitat:
-
-    def __init__(self, marketing_name, industry_name):
-        self.marketing_name = marketing_name
-        self.industry_name = industry_name
-
-island = Habitat("Galapagos", "Island")
-jungle = Habitat("Dark Continent", "Jungle")
-savannah = Habitat("Safari", "Savannah")
-
-
-
-
-
-class Animal:
-
-    def __init__(self, name, animal_type):
-        self.name = name
-        self.type = animal_type
-        self.habitat = None
-
-tommy = Animal("Tommy", "Tortoise")
-tommy.habitat = island
-
-danny = Animal("Danny", "Dodo")
-danny.habitat = island
-
-chester = Animal("Chester", "Cheetah")
-chester.habitat = savannah
-
-horton = Animal("Horton", "Elephant")
-horton.habitat = jungle
-
-
-
-
-
-
-
-
 class Zoo:
     """Contains methods for maintaining a Zoo
 
@@ -106,24 +66,10 @@ class Zoo:
         n/a
         """
 
-        [print(k + ' the ' + v) for k, v in self.animals.items()]
+        # [print(k + ' the ' + v) for k, v in self.animals.items()]
 
-
-if __name__ == "__main__":
-    a_zoo = Zoo("Zoolandia")
-    a_zoo.purchase_animal(tommy)
-    a_zoo.purchase_animal(chester)
-    a_zoo.purchase_animal(horton)
-    a_zoo.purchase_animal(danny)
-
-    a_zoo.build_habitat(savannah)
-    a_zoo.build_habitat(jungle)
-    a_zoo.build_habitat(island)
-
-    a_zoo.animal_report()
-
-    #a_zoo.list_animals.__doc__ # To view the docstring for the method
-
+        [print("{} the {}".format(animal.name, animal.type)) for animal in self.animals]
+        #.items() is a dictionary command
 
 
 
